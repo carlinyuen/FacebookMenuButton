@@ -25,8 +25,6 @@
 
     self.menuButton = [[FacebookMenuButton alloc] initWithFrame:CGRectMake(0, 0, 88, 88)];
     self.menuButton.center = self.view.center;
-    self.menuButton.barTint = [UIColor redColor];
-    self.menuButton.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.menuButton];
 
     [self.menuButton addTarget:self action:@selector(menuSelected:) forControlEvents:UIControlEventTouchUpInside];

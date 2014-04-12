@@ -16,6 +16,9 @@
 
     #define TIME_ANIMATION_DURATION .5
 
+    #define ALPHA_UNPRESSED_TINT 0.6
+    #define ALPHA_PRESSED_TINT 1.0
+
     #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
 
 
@@ -67,7 +70,14 @@
 {
     _barTint = barTint;
 
-    [self updateBarTint];
+    [self updateBarTint:self.highlighted];
+}
+
+- (void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+
+    [self updateBarTint:highlighted];
 }
 
 - (void)setSelected:(BOOL)selected
@@ -83,16 +93,11 @@
     // Some initial settings
     if (!self.initialized)
     {
-        // Remove background highlight
-        [self setBackgroundImage:[UIImage new] forState:UIControlStateSelected];
-        [self setTitleColor:[UIColor clearColor] forState:UIControlStateSelected];
-        self.adjustsImageWhenHighlighted = false;
-
         // Defaults for menu bars
         self.barWidth = SIZE_DEFAULT_BAR_WIDTH;
         self.barHeight = SIZE_DEFAULT_BAR_HEIGHT;
         self.barSpacing = SIZE_DEFAULT_BAR_SPACING;
-        self.barTint = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+        self.barTint = [UIColor whiteColor];
 
         // Animation settings
         self.animationDuration = TIME_ANIMATION_DURATION;
@@ -114,11 +119,11 @@
         [bars addObject:self.bar2];
         [bars addObject:self.bar3];
         for (UIView *bar in bars) {
-            bar.backgroundColor = self.barTint;
             bar.userInteractionEnabled = false;
             [self addSubview:bar];
         }
         self.bars = bars;
+        [self updateBarTint:false];
     }
 }
 
@@ -152,10 +157,12 @@
 
 
 /** @brief Updates all bars with color */
-- (void)updateBarTint
+- (void)updateBarTint:(BOOL)highlighted
 {
     for (UIView *bar in self.bars) {
-        bar.backgroundColor = self.barTint;
+        bar.backgroundColor = [self.barTint
+            colorWithAlphaComponent:(highlighted
+                ? ALPHA_PRESSED_TINT : ALPHA_UNPRESSED_TINT)];
     }
 }
 

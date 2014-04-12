@@ -10,7 +10,7 @@
 
 @interface FacebookMenuButton : UIButton
 
-    /** Color for the menu bars */
+    /** Color for the menu bars, will be slightly transparent when unpressed */
     @property (nonatomic, strong) UIColor *barTint;
 
     /* Width of the menu bars */
