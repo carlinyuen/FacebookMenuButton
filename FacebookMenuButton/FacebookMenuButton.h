@@ -10,10 +10,19 @@
 
 @interface FacebookMenuButton : UIButton
 
+    /** Color for the menu bars */
     @property (nonatomic, strong) UIColor *barTint;
+
+    /* Width of the menu bars */
     @property (nonatomic, assign) NSInteger barWidth;
+
+    /* Height or thickness of the menu bars */
     @property (nonatomic, assign) NSInteger barHeight;
+
+    /* Space between the menu bars */
     @property (nonatomic, assign) NSInteger barSpacing;
-    @property (nonatomic, assign) CGFloat animationDuration;
+
+    /* Duration of the animation when selected */
+    @property (nonatomic, assign) NSTimeInterval animationDuration;
 
 @end

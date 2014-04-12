@@ -41,18 +41,14 @@
 
 - (void)awakeFromNib
 {
-    [self setBackgroundImage:[UIImage new] forState:UIControlStateSelected];
-    [self setTitleColor:[UIColor clearColor] forState:UIControlStateSelected];
-    self.adjustsImageWhenHighlighted = NO;
+    [self createBars];
 }
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setBackgroundImage:[UIImage new] forState:UIControlStateSelected];
-        [self setTitleColor:[UIColor clearColor] forState:UIControlStateSelected];
-        self.adjustsImageWhenHighlighted = NO;
+        [self createBars];
     }
     return self;
 }
@@ -78,17 +74,27 @@
     [self animateBars:selected];
 }
 
-// Create bars if they don't exist yet
+/** @brief Create bars if they don't exist yet */
 - (void)createBars
 {
-    if (!self.inited) {
+    // Some initial settings
+    if (!self.inited)
+    {
+        // Remove background highlight
+        [self setBackgroundImage:[UIImage new] forState:UIControlStateSelected];
+        [self setTitleColor:[UIColor clearColor] forState:UIControlStateSelected];
+        self.adjustsImageWhenHighlighted = false;
+
+        // Defaults for menu bars
         self.barWidth = SIZE_DEFAULT_BAR_WIDTH;
         self.barHeight = SIZE_DEFAULT_BAR_HEIGHT;
         self.barSpacing = SIZE_DEFAULT_BAR_SPACING;
-        self.animationDuration = TIME_ANIMATION_DURATION;
         self.barTint = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
-        [self updateBarTint];
-        self.inited = true;
+
+        // Animation settings
+        self.animationDuration = TIME_ANIMATION_DURATION;
+
+        self.inited = true; // Only allow once
     }
     if (!self.bar1) {
         self.bar1 = [UIView new];
@@ -106,16 +112,16 @@
         [bars addObject:self.bar3];
         for (UIView *bar in bars) {
             bar.backgroundColor = self.barTint;
+            bar.userInteractionEnabled = false;
             [self addSubview:bar];
         }
         self.bars = bars;
     }
 }
 
+/** @brief Update frames / positions of menu bars */
 - (void)updateBarFrame
 {
-    NSLog(@"updateBarFrame");
-
     // Create them if they don't exist
     [self createBars];
 
@@ -141,6 +147,8 @@
     }
 }
 
+
+/** @brief Updates all bars with color */
 - (void)updateBarTint
 {
     for (UIView *bar in self.bars) {
@@ -148,10 +156,9 @@
     }
 }
 
+/** @brief Animates bars based on selected state */
 - (void)animateBars:(BOOL)selected
 {
-    NSLog(@"animateBars: %i", selected);
-
     // Create timing function if needed
     if (!self.timingFunction) {
         self.timingFunction = [CAMediaTimingFunction
@@ -168,9 +175,9 @@
     // Setup
     CALayer *layer;
     CAKeyframeAnimation *animation;
-    CGFloat shiftY = ((self.bars.count * self.barHeight)
-            + ((self.bars.count - 1) * self.barSpacing)
-        ) / 2;
+
+    // This needs to shift the rotated bar into the center of the button, which is exactly one bar spacer and two halves of the center bar and the bar itself
+    CGFloat shiftY = self.barHeight + self.barSpacing;
 
     // Animate to closed X
     if (selected)
