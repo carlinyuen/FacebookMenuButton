@@ -121,7 +121,10 @@
 
     // Setup for bar frame positions
     CGRect bounds = self.bounds;
-    NSInteger paddingY = (CGRectGetHeight(bounds) - (self.bars.count * (self.barHeight + self.barSpacing))) / 2;
+    NSInteger paddingY = (CGRectGetHeight(bounds)
+            - (self.bars.count * self.barHeight)
+            - ((self.bars.count - 1) * self.barSpacing)
+        ) / 2;
     NSInteger paddingX = (CGRectGetWidth(bounds) - self.barWidth) / 2;
     CGFloat cornerRadius = self.barHeight / 2;
 
@@ -165,7 +168,9 @@
     // Setup
     CALayer *layer;
     CAKeyframeAnimation *animation;
-    CGFloat shiftY = CGRectGetHeight(self.bounds) / 6.5;
+    CGFloat shiftY = ((self.bars.count * self.barHeight)
+            + ((self.bars.count - 1) * self.barSpacing)
+        ) / 2;
 
     // Animate to closed X
     if (selected)

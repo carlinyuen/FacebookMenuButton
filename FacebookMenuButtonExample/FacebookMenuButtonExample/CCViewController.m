@@ -23,7 +23,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-    self.menuButton = [[FacebookMenuButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    self.menuButton = [[FacebookMenuButton alloc] initWithFrame:CGRectMake(0, 0, 88, 88)];
     self.menuButton.center = self.view.center;
     self.menuButton.barTint = [UIColor redColor];
     self.menuButton.backgroundColor = [UIColor whiteColor];
