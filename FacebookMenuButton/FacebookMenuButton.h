@@ -14,5 +14,6 @@
     @property (nonatomic, assign) NSInteger barWidth;
     @property (nonatomic, assign) NSInteger barHeight;
     @property (nonatomic, assign) NSInteger barSpacing;
+    @property (nonatomic, assign) CGFloat animationDuration;
 
 @end
