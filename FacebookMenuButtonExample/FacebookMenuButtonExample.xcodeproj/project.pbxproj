@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2230872A18F9AC57008E9412 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2230872918F9AC57008E9412 /* Foundation.framework */; };
+		2230872C18F9AC57008E9412 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2230872B18F9AC57008E9412 /* CoreGraphics.framework */; };
+		2230872E18F9AC57008E9412 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2230872D18F9AC57008E9412 /* UIKit.framework */; };
+		2230873418F9AC57008E9412 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2230873218F9AC57008E9412 /* InfoPlist.strings */; };
+		2230873618F9AC57008E9412 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2230873518F9AC57008E9412 /* main.m */; };
+		2230873A18F9AC57008E9412 /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2230873918F9AC57008E9412 /* CCAppDelegate.m */; };
+		2230873D18F9AC57008E9412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2230873B18F9AC57008E9412 /* Main.storyboard */; };
+		2230874018F9AC57008E9412 /* CCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2230873F18F9AC57008E9412 /* CCViewController.m */; };
+		2230874218F9AC57008E9412 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2230874118F9AC57008E9412 /* Images.xcassets */; };
+		2230874918F9AC57008E9412 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2230874818F9AC57008E9412 /* XCTest.framework */; };
+		2230874A18F9AC57008E9412 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2230872918F9AC57008E9412 /* Foundation.framework */; };
+		2230874B18F9AC57008E9412 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2230872D18F9AC57008E9412 /* UIKit.framework */; };
+		2230875318F9AC57008E9412 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2230875118F9AC57008E9412 /* InfoPlist.strings */; };
+		2230875518F9AC57008E9412 /* FacebookMenuButtonExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2230875418F9AC57008E9412 /* FacebookMenuButtonExampleTests.m */; };
+		2230876018F9AC9A008E9412 /* FacebookMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2230875F18F9AC9A008E9412 /* FacebookMenuButton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2230874C18F9AC57008E9412 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2230871E18F9AC57008E9412 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2230872518F9AC57008E9412;
+			remoteInfo = FacebookMenuButtonExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2230872618F9AC57008E9412 /* FacebookMenuButtonExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookMenuButtonExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2230872918F9AC57008E9412 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2230872B18F9AC57008E9412 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2230872D18F9AC57008E9412 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2230873118F9AC57008E9412 /* FacebookMenuButtonExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FacebookMenuButtonExample-Info.plist"; sourceTree = "<group>"; };
+		2230873318F9AC57008E9412 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2230873518F9AC57008E9412 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2230873718F9AC57008E9412 /* FacebookMenuButtonExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookMenuButtonExample-Prefix.pch"; sourceTree = "<group>"; };
+		2230873818F9AC57008E9412 /* CCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
+		2230873918F9AC57008E9412 /* CCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
+		2230873C18F9AC57008E9412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2230873E18F9AC57008E9412 /* CCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCViewController.h; sourceTree = "<group>"; };
+		2230873F18F9AC57008E9412 /* CCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCViewController.m; sourceTree = "<group>"; };
+		2230874118F9AC57008E9412 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2230874718F9AC57008E9412 /* FacebookMenuButtonExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacebookMenuButtonExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2230874818F9AC57008E9412 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2230875018F9AC57008E9412 /* FacebookMenuButtonExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FacebookMenuButtonExampleTests-Info.plist"; sourceTree = "<group>"; };
+		2230875218F9AC57008E9412 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2230875418F9AC57008E9412 /* FacebookMenuButtonExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacebookMenuButtonExampleTests.m; sourceTree = "<group>"; };
+		2230875E18F9AC9A008E9412 /* FacebookMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookMenuButton.h; path = ../../FacebookMenuButton/FacebookMenuButton.h; sourceTree = "<group>"; };
+		2230875F18F9AC9A008E9412 /* FacebookMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookMenuButton.m; path = ../../FacebookMenuButton/FacebookMenuButton.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2230872318F9AC57008E9412 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2230872C18F9AC57008E9412 /* CoreGraphics.framework in Frameworks */,
+				2230872E18F9AC57008E9412 /* UIKit.framework in Frameworks */,
+				2230872A18F9AC57008E9412 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2230874418F9AC57008E9412 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2230874918F9AC57008E9412 /* XCTest.framework in Frameworks */,
+				2230874B18F9AC57008E9412 /* UIKit.framework in Frameworks */,
+				2230874A18F9AC57008E9412 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2230871D18F9AC57008E9412 = {
+			isa = PBXGroup;
+			children = (
+				2230872F18F9AC57008E9412 /* FacebookMenuButtonExample */,
+				2230874E18F9AC57008E9412 /* FacebookMenuButtonExampleTests */,
+				2230872818F9AC57008E9412 /* Frameworks */,
+				2230872718F9AC57008E9412 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2230872718F9AC57008E9412 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2230872618F9AC57008E9412 /* FacebookMenuButtonExample.app */,
+				2230874718F9AC57008E9412 /* FacebookMenuButtonExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2230872818F9AC57008E9412 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2230872918F9AC57008E9412 /* Foundation.framework */,
+				2230872B18F9AC57008E9412 /* CoreGraphics.framework */,
+				2230872D18F9AC57008E9412 /* UIKit.framework */,
+				2230874818F9AC57008E9412 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2230872F18F9AC57008E9412 /* FacebookMenuButtonExample */ = {
+			isa = PBXGroup;
+			children = (
+				2230873818F9AC57008E9412 /* CCAppDelegate.h */,
+				2230873918F9AC57008E9412 /* CCAppDelegate.m */,
+				2230873B18F9AC57008E9412 /* Main.storyboard */,
+				2230873E18F9AC57008E9412 /* CCViewController.h */,
+				2230873F18F9AC57008E9412 /* CCViewController.m */,
+				2230874118F9AC57008E9412 /* Images.xcassets */,
+				2230873018F9AC57008E9412 /* Supporting Files */,
+				2230876118F9AC9F008E9412 /* FacebookMenuButton */,
+			);
+			path = FacebookMenuButtonExample;
+			sourceTree = "<group>";
+		};
+		2230873018F9AC57008E9412 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2230873118F9AC57008E9412 /* FacebookMenuButtonExample-Info.plist */,
+				2230873218F9AC57008E9412 /* InfoPlist.strings */,
+				2230873518F9AC57008E9412 /* main.m */,
+				2230873718F9AC57008E9412 /* FacebookMenuButtonExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2230874E18F9AC57008E9412 /* FacebookMenuButtonExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				2230875418F9AC57008E9412 /* FacebookMenuButtonExampleTests.m */,
+				2230874F18F9AC57008E9412 /* Supporting Files */,
+			);
+			path = FacebookMenuButtonExampleTests;
+			sourceTree = "<group>";
+		};
+		2230874F18F9AC57008E9412 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2230875018F9AC57008E9412 /* FacebookMenuButtonExampleTests-Info.plist */,
+				2230875118F9AC57008E9412 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2230876118F9AC9F008E9412 /* FacebookMenuButton */ = {
+			isa = PBXGroup;
+			children = (
+				2230875E18F9AC9A008E9412 /* FacebookMenuButton.h */,
+				2230875F18F9AC9A008E9412 /* FacebookMenuButton.m */,
+			);
+			name = FacebookMenuButton;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2230872518F9AC57008E9412 /* FacebookMenuButtonExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2230875818F9AC57008E9412 /* Build configuration list for PBXNativeTarget "FacebookMenuButtonExample" */;
+			buildPhases = (
+				2230872218F9AC57008E9412 /* Sources */,
+				2230872318F9AC57008E9412 /* Frameworks */,
+				2230872418F9AC57008E9412 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FacebookMenuButtonExample;
+			productName = FacebookMenuButtonExample;
+			productReference = 2230872618F9AC57008E9412 /* FacebookMenuButtonExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2230874618F9AC57008E9412 /* FacebookMenuButtonExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2230875B18F9AC57008E9412 /* Build configuration list for PBXNativeTarget "FacebookMenuButtonExampleTests" */;
+			buildPhases = (
+				2230874318F9AC57008E9412 /* Sources */,
+				2230874418F9AC57008E9412 /* Frameworks */,
+				2230874518F9AC57008E9412 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2230874D18F9AC57008E9412 /* PBXTargetDependency */,
+			);
+			name = FacebookMenuButtonExampleTests;
+			productName = FacebookMenuButtonExampleTests;
+			productReference = 2230874718F9AC57008E9412 /* FacebookMenuButtonExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2230871E18F9AC57008E9412 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Carlin Creations";
+				TargetAttributes = {
+					2230874618F9AC57008E9412 = {
+						TestTargetID = 2230872518F9AC57008E9412;
+					};
+				};
+			};
+			buildConfigurationList = 2230872118F9AC57008E9412 /* Build configuration list for PBXProject "FacebookMenuButtonExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2230871D18F9AC57008E9412;
+			productRefGroup = 2230872718F9AC57008E9412 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2230872518F9AC57008E9412 /* FacebookMenuButtonExample */,
+				2230874618F9AC57008E9412 /* FacebookMenuButtonExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2230872418F9AC57008E9412 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2230874218F9AC57008E9412 /* Images.xcassets in Resources */,
+				2230873418F9AC57008E9412 /* InfoPlist.strings in Resources */,
+				2230873D18F9AC57008E9412 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2230874518F9AC57008E9412 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2230875318F9AC57008E9412 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2230872218F9AC57008E9412 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2230873A18F9AC57008E9412 /* CCAppDelegate.m in Sources */,
+				2230873618F9AC57008E9412 /* main.m in Sources */,
+				2230876018F9AC9A008E9412 /* FacebookMenuButton.m in Sources */,
+				2230874018F9AC57008E9412 /* CCViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2230874318F9AC57008E9412 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2230875518F9AC57008E9412 /* FacebookMenuButtonExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2230874D18F9AC57008E9412 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2230872518F9AC57008E9412 /* FacebookMenuButtonExample */;
+			targetProxy = 2230874C18F9AC57008E9412 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2230873218F9AC57008E9412 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2230873318F9AC57008E9412 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2230873B18F9AC57008E9412 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2230873C18F9AC57008E9412 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2230875118F9AC57008E9412 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2230875218F9AC57008E9412 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2230875618F9AC57008E9412 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2230875718F9AC57008E9412 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2230875918F9AC57008E9412 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FacebookMenuButtonExample/FacebookMenuButtonExample-Prefix.pch";
+				INFOPLIST_FILE = "FacebookMenuButtonExample/FacebookMenuButtonExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2230875A18F9AC57008E9412 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FacebookMenuButtonExample/FacebookMenuButtonExample-Prefix.pch";
+				INFOPLIST_FILE = "FacebookMenuButtonExample/FacebookMenuButtonExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2230875C18F9AC57008E9412 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FacebookMenuButtonExample.app/FacebookMenuButtonExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FacebookMenuButtonExample/FacebookMenuButtonExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FacebookMenuButtonExampleTests/FacebookMenuButtonExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2230875D18F9AC57008E9412 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FacebookMenuButtonExample.app/FacebookMenuButtonExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FacebookMenuButtonExample/FacebookMenuButtonExample-Prefix.pch";
+				INFOPLIST_FILE = "FacebookMenuButtonExampleTests/FacebookMenuButtonExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2230872118F9AC57008E9412 /* Build configuration list for PBXProject "FacebookMenuButtonExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2230875618F9AC57008E9412 /* Debug */,
+				2230875718F9AC57008E9412 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2230875818F9AC57008E9412 /* Build configuration list for PBXNativeTarget "FacebookMenuButtonExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2230875918F9AC57008E9412 /* Debug */,
+				2230875A18F9AC57008E9412 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2230875B18F9AC57008E9412 /* Build configuration list for PBXNativeTarget "FacebookMenuButtonExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2230875C18F9AC57008E9412 /* Debug */,
+				2230875D18F9AC57008E9412 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2230871E18F9AC57008E9412 /* Project object */;
+}

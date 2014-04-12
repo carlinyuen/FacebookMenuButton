@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A02B10C3-39C5-4635-BE03-43B7DE2A3A4C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FacebookMenuButtonExample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>76EA3ED7-431D-4046-B39A-9CEEBC7DDF2E</key>
+		<string>ssh://github.com/carlinyuen/FacebookMenuButton.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FacebookMenuButtonExample/FacebookMenuButtonExample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>76EA3ED7-431D-4046-B39A-9CEEBC7DDF2E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/carlinyuen/FacebookMenuButton.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>76EA3ED7-431D-4046-B39A-9CEEBC7DDF2E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>76EA3ED7-431D-4046-B39A-9CEEBC7DDF2E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FacebookMenuButton</string>
+		</dict>
+	</array>
+</dict>
+</plist>
