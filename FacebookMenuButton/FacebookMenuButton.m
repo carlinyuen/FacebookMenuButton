@@ -10,12 +10,18 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+    #define SIZE_DEFAULT_BAR_HEIGHT 2
+    #define SIZE_DEFAULT_BAR_SPACING 5
+    #define SIZE_DEFAULT_BAR_WIDTH 26
+
 @interface FacebookMenuButton ()
 
     @property (nonatomic, strong) UIView *bar1;
     @property (nonatomic, strong) UIView *bar2;
     @property (nonatomic, strong) UIView *bar3;
     @property (nonatomic, strong) NSMutableArray *bars;
+
+    @property (nonatomic, assign) BOOL inited;
 
 @end
 
@@ -25,7 +31,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self updateBarFrame];
     }
     return self;
 }
@@ -37,16 +42,24 @@
     [self updateBarFrame];
 }
 
-- (void)setBarColor:(UIColor *)barColor
+- (void)setBarTint:(UIColor *)barTint
 {
-    _barColor = barColor;
+    _barTint = barTint;
 
-    [self updateBarColor];
+    [self updateBarTint];
 }
 
 // Create bars if they don't exist yet
 - (void)createBars
 {
+    if (!self.inited) {
+        self.barWidth = SIZE_DEFAULT_BAR_WIDTH;
+        self.barHeight = SIZE_DEFAULT_BAR_HEIGHT;
+        self.barSpacing = SIZE_DEFAULT_BAR_SPACING;
+        self.barTint = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+        [self updateBarTint];
+        self.inited = true;
+    }
     if (!self.bar1) {
         self.bar1 = [UIView new];
     }
@@ -63,7 +76,7 @@
         [self.bars addObject:self.bar3];
 
         for (UIView *bar in self.bars) {
-            bar.backgroundColor = [UIColor whiteColor];
+            bar.backgroundColor = self.barTint;
             [self addSubview:bar];
         }
     }
@@ -71,44 +84,35 @@
 
 - (void)updateBarFrame
 {
-    NSLog(@"updateBars");
+    NSLog(@"updateBarFrame");
+
+    // Create them if they dne
     [self createBars];
 
     // Setup for bar frame positions
     CGRect bounds = self.bounds;
-    CGFloat barHeight = CGRectGetHeight(bounds) / 12;
-    CGFloat barWidth = CGRectGetWidth(bounds) / 5 * 3;
-    CGFloat paddingY = CGRectGetHeight(bounds) / 4;
-    CGFloat paddingX = CGRectGetWidth(bounds) / 5;
-    CGFloat paddingBar = CGRectGetHeight(bounds) / 8;
-    CGFloat cornerRadius = barHeight / 2;
+    NSInteger paddingY = (CGRectGetHeight(bounds) - (self.bars.count * (self.barHeight + self.barSpacing))) / 2;
+    NSInteger paddingX = (CGRectGetWidth(bounds) - self.barWidth) / 2;
+    CGFloat cornerRadius = self.barHeight / 2;
 
     // Update bar frames
-    self.bar1.frame = CGRectMake(
-        paddingX, paddingY,
-        barWidth, barHeight
-    );
-    self.bar1.layer.cornerRadius = cornerRadius;
-
-    self.bar2.frame = CGRectMake(
-        paddingX, paddingY + barHeight + paddingBar,
-        barWidth, barHeight
-    );
-    self.bar2.layer.cornerRadius = cornerRadius;
-
-    self.bar3.frame = CGRectMake(
-        paddingX, paddingY + barHeight * 2 + paddingBar * 2,
-        barWidth, barHeight
-    );
-    self.bar3.layer.cornerRadius = cornerRadius;
+    CGFloat yOffset = paddingY;
+    for (UIView *bar in self.bars)
+    {
+        bar.frame = CGRectMake(
+            paddingX, yOffset,
+            self.barWidth, self.barHeight
+        );
+        bar.layer.cornerRadius = cornerRadius;
+        yOffset += self.barHeight + self.barSpacing;
+    }
 }
 
-- (void)updateBarColor
+- (void)updateBarTint
 {
-    self.bar1.backgroundColor
-        = self.bar2.backgroundColor
-        = self.bar3.backgroundColor
-        = self.barColor;
+    for (UIView *bar in self.bars) {
+        bar.backgroundColor = self.barTint;
+    }
 }
 
 /*

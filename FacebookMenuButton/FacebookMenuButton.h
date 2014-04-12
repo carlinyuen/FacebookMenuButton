@@ -10,6 +10,9 @@
 
 @interface FacebookMenuButton : UIButton
 
-    @property (nonatomic, strong) UIColor *barColor;
+    @property (nonatomic, strong) UIColor *barTint;
+    @property (nonatomic, assign) NSInteger barWidth;
+    @property (nonatomic, assign) NSInteger barHeight;
+    @property (nonatomic, assign) NSInteger barSpacing;
 
 @end
