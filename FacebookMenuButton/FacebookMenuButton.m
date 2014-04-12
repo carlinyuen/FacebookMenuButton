@@ -31,9 +31,12 @@
 
     /** Timing function for cubic bezier animation */
     @property (nonatomic, strong) CAMediaTimingFunction *timingFunction;
+
+    /** Convenience storage of keyframe times */
     @property (nonatomic, strong) NSArray *keyframeTimes;
 
-    @property (nonatomic, assign) BOOL inited;
+    /** Flag to check if first time initializing */
+    @property (nonatomic, assign) BOOL initialized;
 
 @end
 
@@ -78,7 +81,7 @@
 - (void)createBars
 {
     // Some initial settings
-    if (!self.inited)
+    if (!self.initialized)
     {
         // Remove background highlight
         [self setBackgroundImage:[UIImage new] forState:UIControlStateSelected];
@@ -94,7 +97,7 @@
         // Animation settings
         self.animationDuration = TIME_ANIMATION_DURATION;
 
-        self.inited = true; // Only allow once
+        self.initialized = true; // Only allow once
     }
     if (!self.bar1) {
         self.bar1 = [UIView new];
