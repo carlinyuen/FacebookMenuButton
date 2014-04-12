@@ -28,12 +28,19 @@
     self.menuButton.barTint = [UIColor redColor];
     self.menuButton.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.menuButton];
+
+    [self.menuButton addTarget:self action:@selector(menuSelected:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)menuSelected:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
 }
 
 @end

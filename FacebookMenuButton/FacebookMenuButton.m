@@ -14,12 +14,23 @@
     #define SIZE_DEFAULT_BAR_SPACING 5
     #define SIZE_DEFAULT_BAR_WIDTH 26
 
+    #define TIME_ANIMATION_DURATION .5
+
+    #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
+
+
 @interface FacebookMenuButton ()
 
+    /** Bar elements */
     @property (nonatomic, strong) UIView *bar1;
     @property (nonatomic, strong) UIView *bar2;
     @property (nonatomic, strong) UIView *bar3;
-    @property (nonatomic, strong) NSMutableArray *bars;
+
+    /** Array to hold bars for quick access */
+    @property (nonatomic, strong) NSArray *bars;
+
+    /** Timing function for cubic bezier animation */
+    @property (nonatomic, strong) CAMediaTimingFunction *timingFunction;
 
     @property (nonatomic, assign) BOOL inited;
 
@@ -49,6 +60,13 @@
     [self updateBarTint];
 }
 
+- (void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+
+    [self animateBars:selected];
+}
+
 // Create bars if they don't exist yet
 - (void)createBars
 {
@@ -70,15 +88,15 @@
         self.bar3 = [UIView new];
     }
     if (!self.bars) {
-        self.bars = [NSMutableArray new];
-        [self.bars addObject:self.bar1];
-        [self.bars addObject:self.bar2];
-        [self.bars addObject:self.bar3];
-
-        for (UIView *bar in self.bars) {
+        NSMutableArray *bars = [NSMutableArray new];
+        [bars addObject:self.bar1];
+        [bars addObject:self.bar2];
+        [bars addObject:self.bar3];
+        for (UIView *bar in bars) {
             bar.backgroundColor = self.barTint;
             [self addSubview:bar];
         }
+        self.bars = bars;
     }
 }
 
@@ -86,7 +104,7 @@
 {
     NSLog(@"updateBarFrame");
 
-    // Create them if they dne
+    // Create them if they don't exist
     [self createBars];
 
     // Setup for bar frame positions
@@ -112,6 +130,187 @@
 {
     for (UIView *bar in self.bars) {
         bar.backgroundColor = self.barTint;
+    }
+}
+
+- (void)animateBars:(BOOL)selected
+{
+    NSLog(@"animateBars: %i", selected);
+
+    // Create timing function if needed
+    if (!self.timingFunction) {
+        self.timingFunction = [CAMediaTimingFunction
+            functionWithControlPoints:1.0 :0.0 :0.645 :0.650];
+    }
+
+    // Setup
+    CALayer *layer;
+    CAKeyframeAnimation *animation;
+
+    // Animate to closed X
+    if (selected)
+    {
+        // Bar 1
+        layer = self.bar1.layer;
+
+        // Animate rotation
+        animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
+        animation.duration = TIME_ANIMATION_DURATION;
+        animation.values = @[
+            @(DEGREES_TO_RADIANS(0))
+            , @(DEGREES_TO_RADIANS(145))
+            , @(DEGREES_TO_RADIANS(130))
+            , @(DEGREES_TO_RADIANS(135))
+        ];
+        animation.keyTimes = @[
+            @(0.0), @(0.45), @(0.75), @(1.0)
+        ];
+        animation.timingFunction = self.timingFunction;
+        animation.fillMode = kCAFillModeBoth;
+        [layer addAnimation:animation forKey:@"rotation"];
+
+        // Animate position
+        animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
+        animation.duration = TIME_ANIMATION_DURATION;
+        animation.values = @[
+            @(0)
+            , @(-self.barSpacing)
+            , @(-self.barSpacing)
+            , @(-self.barSpacing)
+        ];
+        animation.keyTimes = @[
+            @(0.0), @(0.45), @(0.75), @(1.0)
+        ];
+        animation.timingFunction = self.timingFunction;
+        animation.fillMode = kCAFillModeBoth;
+        [layer addAnimation:animation forKey:@"translation"];
+
+        // Bar 2
+        layer = self.bar2.layer;
+        animation = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
+        animation.duration = TIME_ANIMATION_DURATION / 2;
+        animation.values = @[ @(0.0) ];
+        animation.keyTimes = @[ @(1.0) ];
+        animation.timingFunction = self.timingFunction;
+        animation.fillMode = kCAFillModeBoth;
+        [layer addAnimation:animation forKey:@"opacity"];
+
+        // Bar 3
+        layer = self.bar3.layer;
+
+        // Animate rotation
+        animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
+        animation.duration = TIME_ANIMATION_DURATION;
+        animation.values = @[
+            @(DEGREES_TO_RADIANS(0))
+            , @(DEGREES_TO_RADIANS(-145))
+            , @(DEGREES_TO_RADIANS(-130))
+            , @(DEGREES_TO_RADIANS(-135))
+        ];
+        animation.keyTimes = @[
+            @(0.0), @(0.45), @(0.75), @(1.0)
+        ];
+        animation.timingFunction = self.timingFunction;
+        animation.fillMode = kCAFillModeBoth;
+        [layer addAnimation:animation forKey:@"rotation"];
+
+        // Animate position
+        animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
+        animation.duration = TIME_ANIMATION_DURATION;
+        animation.values = @[
+            @(0)
+            , @(self.barSpacing)
+            , @(self.barSpacing)
+            , @(self.barSpacing)
+        ];
+        animation.keyTimes = @[
+            @(0.0), @(0.45), @(0.75), @(1.0)
+        ];
+        animation.timingFunction = self.timingFunction;
+        animation.fillMode = kCAFillModeBoth;
+        [layer addAnimation:animation forKey:@"translation"];
+    }
+    else    // Show hamburger
+    {
+        // Bar 1
+        layer = self.bar1.layer;
+
+        // Animate rotation
+        animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
+        animation.duration = TIME_ANIMATION_DURATION;
+        animation.values = @[
+            @(DEGREES_TO_RADIANS(135))
+            , @(DEGREES_TO_RADIANS(-10))
+            , @(DEGREES_TO_RADIANS(5))
+            , @(DEGREES_TO_RADIANS(0))
+        ];
+        animation.keyTimes = @[
+            @(0.0), @(0.45), @(0.75), @(1.0)
+        ];
+        animation.timingFunction = self.timingFunction;
+        animation.fillMode = kCAFillModeBoth;
+        [layer addAnimation:animation forKey:@"rotation"];
+
+        // Animate position
+        animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
+        animation.duration = TIME_ANIMATION_DURATION;
+        animation.values = @[
+            @(-self.barSpacing)
+            , @(-self.barSpacing)
+            , @(-self.barSpacing)
+            , @(0)
+        ];
+        animation.keyTimes = @[
+            @(0.0), @(0.45), @(0.75), @(1.0)
+        ];
+        animation.timingFunction = self.timingFunction;
+        animation.fillMode = kCAFillModeBoth;
+        [layer addAnimation:animation forKey:@"translation"];
+
+        // Bar 2
+        layer = self.bar2.layer;
+        animation = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
+        animation.duration = TIME_ANIMATION_DURATION / 2;
+        animation.values = @[ @(1.0) ];
+        animation.keyTimes = @[ @(1.0) ];
+        animation.timingFunction = self.timingFunction;
+        animation.fillMode = kCAFillModeBoth;
+        [layer addAnimation:animation forKey:@"opacity"];
+
+        // Bar 3
+        layer = self.bar3.layer;
+
+        // Animate rotation
+        animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
+        animation.duration = TIME_ANIMATION_DURATION;
+        animation.values = @[
+            @(DEGREES_TO_RADIANS(-135))
+            , @(DEGREES_TO_RADIANS(10))
+            , @(DEGREES_TO_RADIANS(-5))
+            , @(DEGREES_TO_RADIANS(0))
+        ];
+        animation.keyTimes = @[
+            @(0.0), @(0.45), @(0.75), @(1.0)
+        ];
+        animation.timingFunction = self.timingFunction;
+        animation.fillMode = kCAFillModeBoth;
+        [layer addAnimation:animation forKey:@"rotation"];
+
+        // Animate position
+        animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
+        animation.duration = TIME_ANIMATION_DURATION;
+        animation.values = @[
+            @(self.barSpacing)
+            , @(self.barSpacing)
+            , @(self.barSpacing)
+            , @(0)
+        ];
+        animation.keyTimes = @[
+            @(0.0), @(0.45), @(0.75), @(1.0)
+        ];
+        animation.timingFunction = self.timingFunction;
+        animation.fillMode = kCAFillModeBoth;
+        [layer addAnimation:animation forKey:@"translation"];
     }
 }
 
