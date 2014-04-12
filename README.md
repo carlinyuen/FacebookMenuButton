@@ -60,7 +60,7 @@ Keywords: iOS, objective-c, objc, Xcode, paper, facebook, menu, hamburger, butto
 	 annoying blue highlight when the button is selected.
 
 ### Inspiration
-http://dstrunk.com/emulating-facebook-papers-menu-animation/
+From Daniel Strunk's HTML5/CSS3 version of the animation: http://dstrunk.com/emulating-facebook-papers-menu-animation/
 
 ### License
 MIT
