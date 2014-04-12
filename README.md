@@ -7,6 +7,12 @@ Keywords: iOS, objective-c, objc, Xcode, paper, facebook, menu, hamburger, butto
 ## Requirements
  - You'll need to have the QuartzCore library imported into your project.
 
+## Demo
+ - See the FacebookMenuButtonExample project in the repo. It has an example of
+	 a button added through IB as well as one created in code.
+
+![](./demo.gif)
+
 ## Usage
  1. Import the button into your view controller: `#import "FacebookMenuButton.h"`
  2. Create and add an instance of the button (you can also do this in IB):
