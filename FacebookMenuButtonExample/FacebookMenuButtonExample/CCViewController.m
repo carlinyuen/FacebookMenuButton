@@ -8,7 +8,11 @@
 
 #import "CCViewController.h"
 
+#import "FacebookMenuButton.h"
+
 @interface CCViewController ()
+
+    @property (nonatomic, strong) FacebookMenuButton *menuButton;
 
 @end
 
@@ -18,6 +22,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    self.menuButton = [[FacebookMenuButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    self.menuButton.center = self.view.center;
 }
 
 - (void)didReceiveMemoryWarning

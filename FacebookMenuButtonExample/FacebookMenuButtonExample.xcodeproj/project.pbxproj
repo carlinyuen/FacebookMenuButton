@@ -22,6 +22,7 @@
 		2230875318F9AC57008E9412 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2230875118F9AC57008E9412 /* InfoPlist.strings */; };
 		2230875518F9AC57008E9412 /* FacebookMenuButtonExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2230875418F9AC57008E9412 /* FacebookMenuButtonExampleTests.m */; };
 		2230876018F9AC9A008E9412 /* FacebookMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2230875F18F9AC9A008E9412 /* FacebookMenuButton.m */; };
+		2230876318F9AF5D008E9412 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2230876218F9AF5D008E9412 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		2230875418F9AC57008E9412 /* FacebookMenuButtonExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacebookMenuButtonExampleTests.m; sourceTree = "<group>"; };
 		2230875E18F9AC9A008E9412 /* FacebookMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookMenuButton.h; path = ../../FacebookMenuButton/FacebookMenuButton.h; sourceTree = "<group>"; };
 		2230875F18F9AC9A008E9412 /* FacebookMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookMenuButton.m; path = ../../FacebookMenuButton/FacebookMenuButton.m; sourceTree = "<group>"; };
+		2230876218F9AF5D008E9412 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2230876318F9AF5D008E9412 /* QuartzCore.framework in Frameworks */,
 				2230872C18F9AC57008E9412 /* CoreGraphics.framework in Frameworks */,
 				2230872E18F9AC57008E9412 /* UIKit.framework in Frameworks */,
 				2230872A18F9AC57008E9412 /* Foundation.framework in Frameworks */,
@@ -104,6 +107,7 @@
 		2230872818F9AC57008E9412 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2230876218F9AF5D008E9412 /* QuartzCore.framework */,
 				2230872918F9AC57008E9412 /* Foundation.framework */,
 				2230872B18F9AC57008E9412 /* CoreGraphics.framework */,
 				2230872D18F9AC57008E9412 /* UIKit.framework */,

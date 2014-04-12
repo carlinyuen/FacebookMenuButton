@@ -10,4 +10,6 @@
 
 @interface FacebookMenuButton : UIButton
 
+    @property (nonatomic, strong) UIColor *barColor;
+
 @end
